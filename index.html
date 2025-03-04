@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل لعبة التفاحة - 1xBet</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        #result { font-size: 20px; color: green; margin-top: 20px; }
+        button { padding: 10px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>تحليل لعبة التفاحة - 1xBet</h1>
+    <p>اضغط على الزر للحصول على توقعات التفاحة:</p>
+    <button onclick="getPrediction()">تحليل اللعبة</button>
+    <p id="result"></p>
+
+    <script>
+        async function getPrediction() {
+            let response = await fetch('/predict');
+            let data = await response.json();
+            document.getElementById('result').textContent = "التوقع: " + data.prediction;
+        }
+    </script>
+</body>
+</html>
